@@ -25,10 +25,19 @@ If you do not want to train the model from scratch, you can use a pretrained mod
 
 # How to run an example?
 
-First of all, ```cd``` to the current project,
+
+First of all, ```git clone --recurse-submodules -j8``` our project and ```cd``` to the current project,
+
+```sh
+git clone --recurse-submodules -j8 https://github.com/yaodongyu/cs8524-pictureteller.git```
+```
+
 ```sh
 cd cs8524-pictureteller
 ```
+
+TODO
+
 
 ### 1. Package this project
 ```sh
