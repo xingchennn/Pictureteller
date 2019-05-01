@@ -10,8 +10,8 @@ This project lets user upload images and return a related sentence.
 Java 8  
 Maven  
 Python 2.7  
-PyTorch  
 Numpy
+PyTorch  
 pycocotools
 
 ## Built With
