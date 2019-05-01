@@ -60,15 +60,17 @@ public class ImageServiceImpl implements ImageService {
             }
 
             String line = null;
+            String currentRelativePath = new java.io.File( "." ).getCanonicalPath();
+
 
             String fileName = file.getOriginalFilename();
             String suffixName = fileName.substring(fileName.lastIndexOf("."));
             fileName = UUID.randomUUID() + suffixName;
-            File dest = new File(filePath + fileName);
+            File dest = new File( currentRelativePath + filePath + fileName);
             file.transferTo(dest);
 
-            arguments[1] = pythonPath;
-            arguments[3] = filePath + fileName;
+            arguments[1] = currentRelativePath + pythonPath;
+            arguments[3] = currentRelativePath + filePath + fileName;
 
             try {
                 Process process = Runtime.getRuntime().exec(arguments);
