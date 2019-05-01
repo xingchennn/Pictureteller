@@ -11,7 +11,6 @@ Java 8
 Maven  
 Python 2.7  
 Numpy   
-
 PyTorch  
 pycocotools
 
