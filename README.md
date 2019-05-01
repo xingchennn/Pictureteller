@@ -84,8 +84,8 @@ localhost:8080/h2-console
 
 2). Enter user name and related information, where
 ```html
+spring.datasource.driver-class-name=org.h2.Driver
 spring.datasource.url=jdbc:h2:file:c:/temp/rcp_h2
 spring.datasource.username=sa
 spring.datasource.password=
-spring.datasource.driver-class-name=org.h2.Driver
 ```
