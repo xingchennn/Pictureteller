@@ -59,5 +59,5 @@ localhost:8080/user/1/image
 
 3). To show an image of user #id, such as user 1, type
 ```html
-http://localhost:8080/user/1/show
+localhost:8080/user/1/show
 ```
