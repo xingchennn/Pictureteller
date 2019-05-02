@@ -60,17 +60,22 @@ java -jar pictureteller-0.0.1-SNAPSHOT.jar
 
 ### 4. Open a browser and have fun
 
-1). To initialize a new user, type
+1). To browse the landing page, type
+```html
+localhost:8080
+```
+
+2). To initialize a new user, type
 ```html
 localhost:8080/user/new
 ```
 
-2). To add an image to user #id, such as user 1, type
+3). To add an image to user #id, such as user 1, type
 ```html
 localhost:8080/user/1/image
 ```
 
-3). To show an image of user #id, such as user 1, type
+4). To show an image of user #id, such as user 1, type
 ```html
 localhost:8080/user/1/show
 ```
