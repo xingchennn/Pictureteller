@@ -1,47 +1,54 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
-<head>
-    <meta charset="UTF-8"/>
-    <title>Image Upload Form</title>
+    <head>
+        <meta charset="UTF-8"/>
+        <title>Image Upload Form</title>
+        <!-- Latest compiled and minified CSS -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css">
+        <style>body { padding-top:50px; }.navbar-inverse .navbar-nav > li > a { color: #DBE4E1; }</style>
+        <script src="/webjars/jquery/1.11.1/jquery.min.js"></script>
+    </head>
 
-    <!-- Latest compiled and minified CSS -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
-          integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"
-          th:href="@{/webjars/bootstrap/3.3.7-1/css/bootstrap.min.css}">
+    <body>
+    <!--/*@thymesVar id="user" type="cs8524.project.pictureteller.domain.User"*/-->
+        <script>
+           function changImg(e) {
+            for (var i = 0; i < e.target.files.length; i++) {
+                var file = e.target.files.item(i);          
+                var freader = new FileReader();
+                freader.readAsDataURL(file);
+                freader.onload = function(e) {
+                  var src = e.target.result;
+                  $("#preview-img").attr("src",src);
+            }
+          }
+        };
+        </script>
 
-    <script src="/webjars/jquery/1.11.1/jquery.min.js"></script>
+        <div class="container">
 
-    <!-- Latest compiled and minified JavaScript -->
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
-            integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
-            crossorigin="anonymous" th:src="@{/webjars/bootstrap/3.3.7-1/js/bootstrap.min.js}"></script>
-</head>
-<body>
-<!--/*@thymesVar id="user" type="cs8524.project.pictureteller.domain.User"*/-->
-<div class="container-fluid" style="margin-top: 20px">
-    <div class="row">
-        <div class="col-md-6 col-md-offset-3">
-            <div class="pannel-group">
-                <div class="panel panel-primary">
-                    <div class="panel-heading">
-                        <h1 class="panel-title">Upload a new user image</h1>
-                    </div>
-                    <div class="panel-body">
-                        <div class="row">
-                            <div class="col-md-5">
-                                <form action="http:\\localhost" method="post" enctype="multipart/form-data"
-                                       th:action="@{'/user/' + ${user.getId()} + '/image'}">
-                                    <label class="control-label">Select File</label>
-                                    <input id="imagefile" name="imagefile" type="file" class="file">
-                                    <button type="submit" class="btn btn-primary">Submit</button>
-                                </form>
-                            </div>
-                        </div>
-                    </div>
+          <div style="max-width: 650px; margin: auto;">
+            <h1 class="page-header">Image Upload Form</h1>
+            <p class="lead">Select a PNG or JPEG image.</p>
+
+            <form id="upload-image-form" action="http:\\localhost" method="post" enctype="multipart/form-data" th:action="@{'/user/' + ${user.getId()} + '/image'}">
+                <div id="image-preview-div" style="display: none">
+                    <label for="exampleInputFile" class="control-label">Selected image:</label>
+                    <br>
+                    <!-- <img id="preview-img" src=""> -->
                 </div>
-            </div>
+                <div class="form-group">
+                    <input id="imagefile" type="file" name="imagefile" required onchange="changImg(event)">
+                    <br>
+                    <img id="preview-img" src="">
+                </div>
+                <br>
+                <button class="btn btn-lg btn-primary" id="upload-button" type="submit">Upload image</button>
+            </form>
         </div>
-    </div>
-</div>
-</body>
+
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>        
+    </body>
 </html>
