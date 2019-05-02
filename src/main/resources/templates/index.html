@@ -1,10 +1,36 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Index</title>
-</head>
-<body>
-    <h1>This is an index page</h1>
-</body>
-</html>
+<html lang="zh-CN" xmlns:th="http://www.thymeleaf.org">
+  <head>
+    <title>Image Teller</title>
+    <link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" th:href="@{/css/landing.css}">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js" type="text/javascript" async></script>
+    <script type="text/javascript" src="js/jquery-2.1.4.min.js"></script>
+<!--     <script type="text/javascript" src="ajaxFunc.js"></script> -->
+  </head>
+
+  <body>
+  <div id="landing-header">
+    <!-- <h1>Welcome to Online Order Application</h1> -->
+    <h3>Upload Images & Get Related Sentence</h3>
+
+    <div class="search" action="/home" style="padding-top: 15px ">
+      <div class="row">
+        <div class="col-md-6">
+          <div class="input-group">
+              <a href="./user/new"><button type="button" class="btn btn-block my-2 my-sm-0" style="height: 60px; font-family: 'Lobster', cursive; font-size: 30px; background-color: #DEE2EB;"><i class="fas fa-sign-in-alt"></i> Let's Go!</button></a>
+            <br>
+          </div> 
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <ul class="slideshow">
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+  </ul>
