@@ -1,0 +1,95 @@
+body {
+  background-color: #000;
+}
+
+h3 {
+  font-size: 6em;
+  font-family: 'Lobster', cursive;
+  color: #DEE2EB;
+  text-shadow: 2px 2px 10px black;
+}
+
+
+#landing-header {
+  z-index: 1;
+  position: relative;
+  text-align: left;
+  padding-left: 50px;
+  padding-top: 35vh;
+}
+
+#landing-header h1 {
+  color: #F7FFF7;
+  font-family: 'Lobster', cursive;
+  font-size: 65px;
+}
+
+.slideshow { 
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  z-index: 0;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.slideshow li { 
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-size: cover;
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
+  opacity: 0;
+  z-index: 0;
+  animation: imageAnimation 40s linear infinite; 
+}
+.slideshow li:nth-child(1) { 
+  background-image: url(https://singularityhub.com/wp-content/uploads/2019/02/Ai-startups-tech-Peter-Rejceck-shutterstock-1290615073-1068x601.jpg); 
+}
+.slideshow li:nth-child(2) { 
+  background-image: url(http://images.ofweek.com/Upload/News/2017-09/27/WooVergil/1506476019887040541.png);
+  animation-delay: 10s; 
+}
+.slideshow li:nth-child(3) { 
+  background-image: url(https://www.msra.cn/wp-content/uploads/news/blogs/2017/04/images/tux2-20170410-3.jpg);
+  animation-delay: 20s; 
+}
+/*.slideshow li:nth-child(4) { 
+  background-image: url(https://ep01.epimg.net/tecnologia/imagenes/2017/11/10/actualidad/1510305765_226811_1510399464_noticia_normal_recorte1.jpg);
+  animation-delay: 30s; 
+}*/
+.slideshow li:nth-child(4) { 
+  background-image: url(https://www.amd.com/system/files/108116-iStock-888477716-digital-brain-fade-1260x709.png);
+  animation-delay: 30s; 
+}
+
+@keyframes imageAnimation { 
+  0% { 
+    opacity: 0; 
+    animation-timing-function: ease-in;
+  }
+  10% {
+    opacity: 1;
+    animation-timing-function: ease-out;
+  }
+  20% {
+    opacity: 1
+  }
+  30% {
+    opacity: 0
+  }
+}
+
+
+/* Older browser support - .no-cssanimations class added by modernizr */
+.no-cssanimations .slideshow li {
+	opacity: 1;
+}
+
+/**/
